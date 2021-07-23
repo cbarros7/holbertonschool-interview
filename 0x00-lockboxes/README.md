@@ -1,6 +1,6 @@
 # Lockboxes
 
-[![lisence](https://img.shields.io/github/license/cbarros7/holbertonschool-machine_learning?style=plastic)](https://github.com/cbarros7/holbertonschool-machine_learning/blob/main/LICENSE)
+[![lisence](https://img.shields.io/github/license/cbarros7/holbertonschool-machine_learning?style=plastic)](https://github.com/cbarros7/holbertonschool-interview/blob/main/LICENSE)
 [![Twitter Carlos](https://img.shields.io/twitter/follow/cbarros27?label=CarlosBarros&style=social)](https://twitter.com/cbarros27)
 
 <br>
