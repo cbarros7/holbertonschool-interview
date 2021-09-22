@@ -4,6 +4,8 @@ from itertools import takewhile
 
 NUMBER_OF_BITS_PER_BLOCK = 8
 MAX_NUMBER_OF_ONES = 4
+
+
 def to_bits(bytes):
     """convert to bits
     """
@@ -15,13 +17,14 @@ def to_bits(bytes):
             num.append(bool(byte & exp))
         yield num
 
+
 def validUTF8(data):
     """determines if a given data
         set represents a valid UTF-8 encoding.
 
     Args:
         data : data for validate
-        
+
     Return:
         True if data is a valid UTF-8 encoding,
         else return False
