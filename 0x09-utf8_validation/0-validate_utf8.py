@@ -1,22 +1,5 @@
 #!/usr/bin/python3
 """UTF8 Validation"""
-from itertools import takewhile
-
-NUMBER_OF_BITS_PER_BLOCK = 8
-MAX_NUMBER_OF_ONES = 4
-
-
-def to_bits(bytes):
-    """convert to bits
-    """
-    for byte in bytes:
-        num = []
-        exp = 1 << NUMBER_OF_BITS_PER_BLOCK
-        while exp:
-            exp >>= 1
-            num.append(bool(byte & exp))
-        yield num
-
 
 def validUTF8(data):
     """determines if a given data
@@ -29,24 +12,22 @@ def validUTF8(data):
         True if data is a valid UTF-8 encoding,
         else return False
     """
-    bits = to_bits(data)
-    for byte in bits:
-        # single byte char
-        if byte[0] == 0:
-            continue
+    byte_count = 0
+    first = 1 << 7
+    second = 1 << 6
 
-    # multi-byte character
-        amount = sum(takewhile(bool, byte))
-        if amount <= 1:
-            return False
-        if amount >= MAX_NUMBER_OF_ONES:
-            return False
-
-        for _ in range(amount - 1):
-            try:
-                byte = next(bits)
-            except StopIteration:
+    for n in data:
+        condition = 1 << 7
+        if byte_count == 0:
+            while condition & n:
+                byte_count += 1
+                condition = condition >> 1
+            if byte_count == 0:
+                continue
+            if byte_count == 1 or byte_count > 4:
                 return False
-            if byte[0:2] != [1, 0]:
+        else:
+            if not (n & first and not (n & second)):
                 return False
-    return True
+        byte_count -= 1
+    return byte_count == 0
