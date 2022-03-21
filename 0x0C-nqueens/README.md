@@ -1,10 +1,5 @@
 # 0x0C. N Queens
 
-## Requirements
-
-- All files are created and executed on Ubuntu 14.04 LTS using Python3 (version 3.4.3)
-- All Python code use the PEP 8 style (version 1.7.\*)
-
 ## Tasks
 
 ### [0. N queens](./0-nqueens.py)
@@ -32,7 +27,3 @@ julien@ubuntu:~/0x08. N Queens$ ./101-nqueens.py 6
 [[0, 3], [1, 0], [2, 4], [3, 1], [4, 5], [5, 2]]
 [[0, 4], [1, 2], [2, 0], [3, 5], [4, 3], [5, 1]]
 ```
-
-## Author
-
-- **Pierre Beaujuge** - [PierreBeaujuge](https://www.github.com/PierreBeaujuge)
