@@ -1,15 +1,9 @@
-#ifndef SUBSTRING_H
-#define SUBSTRING_H
+#ifndef _SUBSTRING_H_
+#define _SUBSTRING_H_
 
-/* INCLUDED LIBRARIES */
-#include <stdio.h>
-#include <stdlib.h>
-
-/* FUNCTION PROTOTYPES */
 int *find_substring(char const *s, char const **words, int nb_words, int *n);
-int allocate(int **word_used, int nb_words, int **indices, int max_index);
-int string_compare(char const *s1, unsigned int i, char const *s2);
-int string_length(char const *str);
-void reset(int **array, int size);
+int match_search(char const *s, char const **words, int nb_words, int word_ln);
+int string_match(char const *str, char const *word);
+int in_string(int *arr, int len, int q);
 
 #endif
